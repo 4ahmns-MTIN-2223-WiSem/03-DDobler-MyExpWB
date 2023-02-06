@@ -5,7 +5,11 @@ using UnityEngine;
 public class playercontroller : MonoBehaviour
 {
     public string shootkey;
+    public string axekey;
+    public string granatekey;
     public GameObject projectile;
+    public GameObject axe;
+    public GameObject granate;
     public Transform spawnPos;
     public Vector3 projectileForce;
     public SphereCollider bx;
@@ -35,6 +39,22 @@ public class playercontroller : MonoBehaviour
         if (Input.GetKeyDown(shootkey))
         {
             GameObject clone = Instantiate(projectile);
+            clone.transform.position = spawnPos.position;
+            Rigidbody rbClone = clone.GetComponent<Rigidbody>();
+            rbClone.AddForce(projectileForce);
+
+        }
+        if (Input.GetKeyDown(axekey))
+        {
+            GameObject clone = Instantiate(axe);
+            clone.transform.position = spawnPos.position;
+            Rigidbody rbClone = clone.GetComponent<Rigidbody>();
+            rbClone.AddForce(projectileForce);
+
+        }
+        if (Input.GetKeyDown(granatekey))
+        {
+            GameObject clone = Instantiate(granate);
             clone.transform.position = spawnPos.position;
             Rigidbody rbClone = clone.GetComponent<Rigidbody>();
             rbClone.AddForce(projectileForce);

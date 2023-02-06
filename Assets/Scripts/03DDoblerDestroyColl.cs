@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyColl : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,11 @@ public class DestroyColl : MonoBehaviour
     private void OnCollisionEnter(Collision x)
     {
         Debug.Log("Projetil trifft etwas!");
-
-        if (x.gameObject.tag == "viereck")
-        {
-            Destroy(x.gameObject);
-        }
+        
+        Debug.Log("ich: " +gameObject.name+"mein collision object " + x.gameObject.name);
+        
+            Destroy(gameObject);
+        
     }
 
 }
